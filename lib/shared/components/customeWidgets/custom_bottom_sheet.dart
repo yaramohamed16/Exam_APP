@@ -24,6 +24,7 @@ class CustomBottomSheet extends StatelessWidget {
       child: BlocConsumer<ExamsCubit, ExamQuestionStats>(
         listener: (context, state) {},
         builder: (context, state) {
+          var cubut=ExamsCubit.get(context);
           return Container(
             padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
             decoration: const BoxDecoration(
@@ -82,13 +83,13 @@ class CustomBottomSheet extends StatelessWidget {
                 ),
                 Expanded(
                   child: ListView.separated(
-                    itemCount: data?.length ?? 0,
+                    itemCount: cubut.examquestionsData?.data?.length??0,
                     padding: const EdgeInsets.only(bottom: 16),
                     separatorBuilder: (BuildContext context, int index) =>
                         const Divider(),
                     itemBuilder: (BuildContext context, int index) {
                       return ReviewQuestions(
-                        list: data,
+                        list: cubut.examquestionsData?.data,
                         index: index,
                         updatePageViewController:
                             updatePageViewController, // Pass callback function

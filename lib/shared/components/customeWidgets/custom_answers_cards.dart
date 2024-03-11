@@ -22,7 +22,7 @@ class AnswersCards extends StatelessWidget {
           Expanded(
             child: Container(
               width: 160,
-              height: 145,
+              // height: 145,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(color: iconBorder)),
@@ -90,6 +90,9 @@ class AnswersCards extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 15,
+                  ),
                 ],
               ),
             ),
@@ -100,7 +103,7 @@ class AnswersCards extends StatelessWidget {
           Expanded(
             child: Container(
               width: 160,
-              height: 145,
+              // height: 145,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(color: const Color(0xffF3F4F6))),
@@ -167,6 +170,9 @@ class AnswersCards extends StatelessWidget {
                         color: iconColor,
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 15,
                   ),
                 ],
               ),

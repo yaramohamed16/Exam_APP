@@ -24,9 +24,8 @@ class CustomeDetailsCard extends StatelessWidget {
 
     return Expanded(
       child: Container(
-        ///mostatel
         width: 155.5,
-        height: 54,
+        // height: 54,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: const Color(0xffF3F4F6))),

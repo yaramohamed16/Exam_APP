@@ -69,44 +69,57 @@ class ExamQuestionsPage extends StatelessWidget {
                 ),
               ),
               actions: [
+                // Updated GestureDetector for the Pause button
                 GestureDetector(
                   onTap: () {
                     showDialog(
-                        context: context,
-                        builder: (context) {
-                          return CustomeDialog(
-                            title: 'Pause Exam',
-                            imageUrl: 'assets/images/pausetimer.PNG',
-                            onConfirm: () {
-                              _controller.pause();
-                            },
-                            onCancel: () {
-                              Navigator.pop(context);
-                              _controller.resume();
-                            },
-                            subTitle: 'Are you sure you want to pause exam ?',
-                            leftColor: const Color(0xff0225FF),
-                            buttonText: 'Pause',
-                          );
-                        });
+                      context: context,
+                      builder: (context) {
+                        return CustomeDialog(
+                          title: 'Pause Exam',
+                          imageUrl: 'assets/images/pausetimer.PNG',
+                          onConfirm: () {
+                            _controller.pause();
+                          },
+                          onCancel: () {
+                            Navigator.pop(context);
+                            _controller.resume();
+                          },
+                          subTitle: 'Are you sure you want to pause exam ?',
+                          leftColor: const Color(0xff0225FF),
+                          buttonText: 'Pause',
+                        );
+                      },
+                    );
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    width: 82,
                     height: 35,
+                    width: 82,
+                    // Adjusted width for the container
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: const Color(0xffE5E7EB))),
-                    child: const Padding(
-                      padding: EdgeInsets.all(5),
-                      child: Row(children: [
-                        Icon(Icons.pause_circle_outline_outlined),
-                        SizedBox(width: 5),
-                        Text("Pause", style: TextStyle(fontSize: 12))
-                      ]),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: const Color(0xffE5E7EB)),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.pause_circle_outline_outlined,
+                          color: const Color(0xff0225FF),
+                          size: 20,
+                        ),
+                        const SizedBox(width: 5), // Added SizedBox for spacing
+                        Text(
+                          "Pause",
+                          style: TextStyle(
+                              fontSize: 12, color: const Color(0xff0225FF)),
+                        ),
+                      ],
                     ),
                   ),
                 ),
+
                 const SizedBox(width: 10),
                 //submit
                 GestureDetector(
@@ -121,13 +134,12 @@ class ExamQuestionsPage extends StatelessWidget {
                         leftColor: const Color(0xffE64646),
                         buttonText: 'Yes, End',
                         onConfirm: () {
-                          // Pause the timer
                           _controller.pause();
 
-                          // Perform actions when the exam ends
                           print("id: ${exams?.id}");
                           cubit.submitStudentAnswers(
                               idString!, cubit.selectedOptions, (responseData) {
+                            Navigator.pop(context);
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
@@ -442,7 +454,9 @@ class ExamQuestionsPage extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                                 child: const Padding(
-                                  padding: EdgeInsets.only(right: 20.0),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 12.0),
+                                  // Adjust padding here
                                   child: Row(
                                     children: [
                                       Padding(

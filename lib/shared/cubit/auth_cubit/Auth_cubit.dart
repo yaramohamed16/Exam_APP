@@ -1,5 +1,5 @@
+import 'package:exams_app/shared/network/remote/dio_helper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../api_service.dart';
 import 'auth_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
@@ -7,7 +7,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   void login(String email, String password) async {
     try {
-      bool isLoggedIn = await ApiService.signIn(email, password);
+      bool isLoggedIn = await DioHelper.signIn(email, password);
       if (isLoggedIn) {
         emit(LoginSuccess());
       } else {

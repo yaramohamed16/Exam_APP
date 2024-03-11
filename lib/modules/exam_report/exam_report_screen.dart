@@ -26,7 +26,7 @@ class ExamReportScreen extends StatelessWidget {
         builder: (context, state) {
           var cubit = ExamReportCubit.get(context);
           return Scaffold(
-            appBar: appBarCustom(pageName: "Exam Report", context: context),
+            appBar: appBarCustom(pageName: "Exam Report", context: context,),
             floatingActionButton: SizedBox(
               width: 150,
               child: FloatingActionButton(
