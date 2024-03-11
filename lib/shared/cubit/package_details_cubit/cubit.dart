@@ -34,10 +34,10 @@ class PackageDetailsCubit extends Cubit<PackageDetailsStates> {
         }).then((value) {
       emit(GetPackageDetailsSuccess());
       detailsModel = ExamOverviewModel.fromJson(value.data);
-      // print(detailsModel?.data);
+      print(detailsModel?.data);
     }).catchError((error) {
       emit(GetPackageDetailsError(error.toString()));
-      // print(error.toString());
+      print(error.toString());
     });
   }
 
