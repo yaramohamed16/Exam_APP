@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:icon_broken/icon_broken.dart';
 
-import '../../cubit/exam_package_cubit/cubit.dart';
+import '../../../../cubit/exam_package_cubit/cubit.dart';
 
 class SearchSection extends StatelessWidget {
   const SearchSection({super.key});

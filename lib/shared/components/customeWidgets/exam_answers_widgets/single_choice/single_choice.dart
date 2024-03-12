@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../models/exam_report_model/exam_report_model.dart';
+import '../../../../../models/exam_report_model/exam_report_model.dart';
 
 class SingleChoice extends StatelessWidget {
   final Questions ? model ;

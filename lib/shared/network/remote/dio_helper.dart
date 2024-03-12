@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../app_storage.dart';
+import '../../storage/app_storage.dart';
 
 class DioHelper {
   static late Dio dio;

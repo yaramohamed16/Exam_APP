@@ -139,11 +139,11 @@
 //   }
 // }
 //multi choiv
-import 'package:exams_app/shared/components/constants.dart';
+import 'package:exams_app/shared/components/colors/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../../models/exam_questions_model/exam_questions_model.dart';
-import '../../cubit/exam_questions_cubit/cubit.dart';
+import '../../../../../models/exam_questions_model/exam_questions_model.dart';
+import '../../../../cubit/exam_questions_cubit/cubit.dart';
 
 class MultiChoice extends StatelessWidget {
   final DataQuestions? model;

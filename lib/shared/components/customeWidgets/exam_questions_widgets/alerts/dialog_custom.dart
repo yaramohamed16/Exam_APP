@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomeDialog extends StatelessWidget {
+class CustomDialog extends StatelessWidget {
   final String title;
   final String imageUrl;
   final VoidCallback onConfirm;
@@ -9,7 +9,7 @@ class CustomeDialog extends StatelessWidget {
   final Color leftColor;
   final String buttonText;
 
-  const CustomeDialog(
+  const CustomDialog(
       {Key? key,
       required this.title,
       required this.imageUrl,

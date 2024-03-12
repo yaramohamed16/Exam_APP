@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../models/exam_report_model/exam_report_model.dart';
-import '../constants.dart';
-import 'multi_choice.dart';
-import 'single_choice.dart';
+import '../../../../../models/exam_report_model/exam_report_model.dart';
+import '../../../colors/constants.dart';
+import '../multi_choice/multi_choice.dart';
+import '../single_choice/single_choice.dart';
 
 class QuestionCard extends StatelessWidget {
   final Questions? model;

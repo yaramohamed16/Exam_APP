@@ -2,10 +2,10 @@
 
 import 'dart:developer';
 
-import 'package:exams_app/shared/components/constants.dart';
-import 'package:exams_app/shared/components/customeWidgets/dialog_custome.dart';
-import 'package:exams_app/shared/components/customeWidgets/multi_choice_question.dart';
-import 'package:exams_app/shared/components/customeWidgets/single_choice_question.dart';
+import 'package:exams_app/shared/components/colors/constants.dart';
+import 'package:exams_app/shared/components/customeWidgets/exam_questions_widgets/alerts/dialog_custom.dart';
+import 'package:exams_app/shared/components/customeWidgets/exam_questions_widgets/multi_choice/multi_choice_question.dart';
+import 'package:exams_app/shared/components/customeWidgets/exam_questions_widgets/single_choice/single_choice_question.dart';
 import 'package:exams_app/shared/cubit/exam_questions_cubit/states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,8 +13,8 @@ import 'package:timer_count_down/timer_controller.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 
 import '../../models/exam_overview_model/examOverViewModel.dart';
-import '../../shared/components/customeWidgets/custom_bottom_sheet.dart';
-import '../../shared/components/customeWidgets/custom_question_progress.dart';
+import '../../shared/components/customeWidgets/exam_questions_widgets/bottom_sheet/custom_bottom_sheet.dart';
+import '../../shared/components/customeWidgets/exam_questions_widgets/question_progress/custom_question_progress.dart';
 import '../../shared/cubit/exam_questions_cubit/cubit.dart';
 import '../exam_report/exam_report_screen.dart';
 
@@ -75,7 +75,7 @@ class ExamQuestionsPage extends StatelessWidget {
                     showDialog(
                       context: context,
                       builder: (context) {
-                        return CustomeDialog(
+                        return CustomDialog(
                           title: 'Pause Exam',
                           imageUrl: 'assets/images/pausetimer.PNG',
                           onConfirm: () {
@@ -127,7 +127,7 @@ class ExamQuestionsPage extends StatelessWidget {
                     showDialog(
                       barrierDismissible: false,
                       context: context,
-                      builder: (context) => CustomeDialog(
+                      builder: (context) => CustomDialog(
                         title: 'End Exam',
                         imageUrl: 'assets/images/endexam.PNG',
                         subTitle: 'Are you sure you want to end exam ?',

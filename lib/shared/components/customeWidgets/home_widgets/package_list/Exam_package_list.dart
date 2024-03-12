@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../cubit/home_cubit/cubit.dart';
-import 'package_card.dart';
+import '../../../../cubit/home_cubit/cubit.dart';
+import '../package_card/package_card.dart';
 
 class ExamPackageList extends StatelessWidget {
   const ExamPackageList({super.key});

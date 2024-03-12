@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../cubit/exam_overview_cubit/cubit.dart';
-import '../constants.dart';
+import '../../../../cubit/exam_overview_cubit/cubit.dart';
+import '../../../colors/constants.dart';
 
 // ignore: must_be_immutable
-class CustomeDetailsCard extends StatelessWidget {
-  CustomeDetailsCard({
+class CustomDetailsCard extends StatelessWidget {
+  CustomDetailsCard({
     super.key,
     required this.title,
     required this.iconName,

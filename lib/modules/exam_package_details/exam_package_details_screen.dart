@@ -3,11 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../shared/components/constants.dart';
+import '../../shared/components/colors/constants.dart';
 
-import '../../shared/components/customeWidgets/custom_exam_page_components.dart';
-import '../../shared/components/customeWidgets/custom_packagesYouLike.dart';
-import '../../shared/components/customeWidgets/custome_app_bar.dart';
+import '../../shared/components/customeWidgets/grey_line/custom_line.dart';
+import '../../shared/components/customeWidgets/package_details_widgets/exams_list/custom_exam_page_components.dart';
+import '../../shared/components/customeWidgets/package_details_widgets/packages_you_like/custom_packagesYouLike.dart';
+import '../../shared/components/customeWidgets/appBar/custome_app_bar.dart';
 
 import '../../shared/cubit/package_details_cubit/cubit.dart';
 import '../../shared/cubit/package_details_cubit/state.dart';
@@ -111,7 +112,7 @@ class ExamPackageDetailsScreen extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          greyLine(),
+                          const CustomLine(),
                           const SizedBox(
                             height: 16,
                           ),
@@ -206,7 +207,7 @@ class ExamPackageDetailsScreen extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          greyLine(),
+                          const CustomLine(),
                           (cubit.isShown)
                               ? const SizedBox(
                                   height: 10,
@@ -255,7 +256,7 @@ class ExamPackageDetailsScreen extends StatelessWidget {
                                 child: const ExamListView(),
                               ),
                             ),
-                          greyLine(),
+                          const CustomLine(),
                           const SizedBox(
                             height: 24,
                           ),

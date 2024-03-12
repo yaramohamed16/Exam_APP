@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../models/exam_questions_model/exam_questions_model.dart';
-import '../../cubit/exam_questions_cubit/cubit.dart';
+import '../../../../../models/exam_questions_model/exam_questions_model.dart';
+import '../../../../cubit/exam_questions_cubit/cubit.dart';
 
 class SingleChoice extends StatelessWidget {
   final DataQuestions? model;

@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../cubit/exam_package_cubit/cubit.dart';
-import '../../cubit/exam_package_cubit/states.dart';
-import 'exam_package_card.dart';
+import '../../../../cubit/exam_package_cubit/cubit.dart';
+import '../../../../cubit/exam_package_cubit/states.dart';
+import '../packages_cards/exam_package_card.dart';
 
 class PakageList extends StatelessWidget {
   const PakageList({super.key});

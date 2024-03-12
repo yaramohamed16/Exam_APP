@@ -3,12 +3,12 @@ import 'package:exams_app/modules/exam_questions/exam_questions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../cubit/exam_overview_cubit/cubit.dart';
-import '../../cubit/exam_overview_cubit/states.dart';
+import '../../../../cubit/exam_overview_cubit/cubit.dart';
+import '../../../../cubit/exam_overview_cubit/states.dart';
 
 // ignore: must_be_immutable
-class CustomeBottomButton extends StatelessWidget {
-  CustomeBottomButton(
+class CustomBottomButton extends StatelessWidget {
+  CustomBottomButton(
       {super.key, required this.bottomTitle, required this.exams});
 
   String bottomTitle;

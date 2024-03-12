@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../colors/constants.dart';
 
 PreferredSizeWidget appBarCustom({
   required String pageName,

@@ -161,7 +161,7 @@ class ExamsOverview {
     description = json['description'];
     image = json['image'];
     examTime = json['exam_time'];
-    examPackage = json['exam_package'];
+    examPackage = json['exam_package_widgets'];
     examPackageId = json['exam_package_id'];
     allowedAttempts = json['allowed_attempts'];
     allowBack = json['allow_back'];
@@ -190,7 +190,7 @@ class ExamsOverview {
     data['description'] = this.description;
     data['image'] = this.image;
     data['exam_time'] = this.examTime;
-    data['exam_package'] = this.examPackage;
+    data['exam_package_widgets'] = this.examPackage;
     data['exam_package_id'] = this.examPackageId;
     data['allowed_attempts'] = this.allowedAttempts;
     data['allow_back'] = this.allowBack;

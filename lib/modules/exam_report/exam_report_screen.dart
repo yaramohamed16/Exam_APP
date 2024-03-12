@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../shared/components/constants.dart';
-import '../../shared/components/customeWidgets/custom_answers_cards.dart';
-import '../../shared/components/customeWidgets/custom_examReport_header.dart';
-import '../../shared/components/customeWidgets/custom_score_circle.dart';
-import '../../shared/components/customeWidgets/custome_app_bar.dart';
+import '../../shared/components/colors/constants.dart';
+import '../../shared/components/customeWidgets/exam_report_widgets/answer_cards/custom_answers_cards.dart';
+import '../../shared/components/customeWidgets/exam_report_widgets/header/custom_examReport_header.dart';
+import '../../shared/components/customeWidgets/exam_report_widgets/score_circle/custom_score_circle.dart';
+import '../../shared/components/customeWidgets/appBar/custome_app_bar.dart';
 import '../../shared/cubit/exam_report_cubit/cubit.dart';
 import '../../shared/cubit/exam_report_cubit/state.dart';
 import '../exam-answers/exam_answers.dart';

@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:icon_broken/icon_broken.dart';
 
-import '../../../models/exam_package_model/exam_packages_model.dart';
-import '../../../modules/exam_package_details/exam_package_details_screen.dart';
-import '../constants.dart';
+import '../../../../../models/exam_package_model/exam_packages_model.dart';
+import '../../../../../modules/exam_package_details/exam_package_details_screen.dart';
+import '../../../colors/constants.dart';
 
 class PackageCard extends StatelessWidget {
   final Data? model;

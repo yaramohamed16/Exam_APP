@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icon_broken/icon_broken.dart';
 
-import '../../shared/components/constants.dart';
-import '../../shared/components/customeWidgets/Exam_package_list.dart';
-import '../../shared/components/customeWidgets/popular_package_list.dart';
+import '../../shared/components/colors/constants.dart';
+import '../../shared/components/customeWidgets/home_widgets/package_list/Exam_package_list.dart';
+import '../../shared/components/customeWidgets/home_widgets/popular_list/popular_package_list.dart';
 import '../../shared/cubit/home_cubit/cubit.dart';
 import '../../shared/cubit/home_cubit/states.dart';
 import '../exam_package/exam_package_screen.dart';

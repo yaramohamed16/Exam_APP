@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../models/exam_questions_model/exam_questions_model.dart';
+import '../../../../../models/exam_questions_model/exam_questions_model.dart';
 
-import '../../cubit/exam_questions_cubit/cubit.dart';
-import '../../cubit/exam_questions_cubit/states.dart';
+import '../../../../cubit/exam_questions_cubit/cubit.dart';
+import '../../../../cubit/exam_questions_cubit/states.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   CustomBottomSheet({

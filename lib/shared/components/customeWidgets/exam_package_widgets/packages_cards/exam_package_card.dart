@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../models/exam_package_model/exam_packages_model.dart';
-import '../../../modules/exam_package_details/exam_package_details_screen.dart';
-import '../constants.dart';
+import '../../../../../models/exam_package_model/exam_packages_model.dart';
+import '../../../../../modules/exam_package_details/exam_package_details_screen.dart';
+import '../../../colors/constants.dart';
 
 class ExamCard extends StatelessWidget {
   final Data? model;

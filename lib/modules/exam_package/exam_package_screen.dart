@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../shared/components/constants.dart';
-import '../../shared/components/customeWidgets/custome_app_bar.dart';
-import '../../shared/components/customeWidgets/package_list.dart';
-import '../../shared/components/customeWidgets/search_section.dart';
+import '../../shared/components/colors/constants.dart';
+import '../../shared/components/customeWidgets/appBar/custome_app_bar.dart';
+import '../../shared/components/customeWidgets/exam_package_widgets/packages_list/package_list.dart';
+import '../../shared/components/customeWidgets/exam_package_widgets/search/search_section.dart';
 import '../../shared/cubit/exam_package_cubit/cubit.dart';
 import '../../shared/cubit/exam_package_cubit/states.dart';
 

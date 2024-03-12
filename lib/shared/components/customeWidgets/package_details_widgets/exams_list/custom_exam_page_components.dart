@@ -4,10 +4,10 @@ import 'package:exams_app/models/exam_overview_model/examOverViewModel.dart';
 import 'package:flutter/material.dart';
 
 
-import '../../../modules/exam_overview/exam_overview_page.dart';
-import '../../cubit/package_details_cubit/cubit.dart';
+import '../../../../../modules/exam_overview/exam_overview_page.dart';
+import '../../../../cubit/package_details_cubit/cubit.dart';
 
-import '../constants.dart';
+import '../../../colors/constants.dart';
 
 class ExamListView extends StatelessWidget {
   const ExamListView({super.key});
@@ -103,10 +103,10 @@ class ExamList extends StatelessWidget {
   }
 }
 
-Widget greyLine() => Center(
-      child: Container(
-        height: 0.5,
-        width: 370,
-        color: Colors.grey.withOpacity(0.4),
-      ),
-    );
+// Widget greyLine() => Center(
+//       child: Container(
+//         height: 0.5,
+//         width: 370,
+//         color: Colors.grey.withOpacity(0.4),
+//       ),
+//     );

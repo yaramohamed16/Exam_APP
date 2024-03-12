@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../models/exam_overview_model/examOverViewModel.dart';
-import '../../shared/components/constants.dart';
-import '../../shared/components/customeWidgets/custome_app_bar.dart';
-import '../../shared/components/customeWidgets/custome_bottom_button.dart';
-import '../../shared/components/customeWidgets/custome_details_card.dart';
-import '../../shared/components/customeWidgets/custome_line.dart';
+import '../../shared/components/colors/constants.dart';
+import '../../shared/components/customeWidgets/appBar/custome_app_bar.dart';
+import '../../shared/components/customeWidgets/exam_overview_widgets/start_exam_button/custom_bottom_button.dart';
+import '../../shared/components/customeWidgets/exam_overview_widgets/exam_details_cards/custom_details_card.dart';
+import '../../shared/components/customeWidgets/grey_line/custom_line.dart';
 
 import '../../shared/cubit/exam_overview_cubit/cubit.dart';
 import '../../shared/cubit/exam_overview_cubit/states.dart';
@@ -38,7 +38,7 @@ class ExamOverviewPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: 5),
-                        const CustomeLine(),
+                        const CustomLine(),
                         const SizedBox(height: 24),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,12 +67,12 @@ class ExamOverviewPage extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            CustomeDetailsCard(
+                            CustomDetailsCard(
                                 questionsCount: exams?.questionsCount,
                                 title: "Questions",
                                 iconName: Icons.description_outlined),
                             const SizedBox(width: 16),
-                            CustomeDetailsCard(
+                            CustomDetailsCard(
                                 title: "Min score",
                                 iconName: Icons.gpp_good_outlined,
                             minScore: exams?.minScore,
@@ -94,7 +94,7 @@ class ExamOverviewPage extends StatelessWidget {
                           ),
                           Text("---")
                         ]),
-                        CustomeBottomButton(
+                        CustomBottomButton(
                             exams:exams, bottomTitle: "Start Exam")
                       ],
                     ),

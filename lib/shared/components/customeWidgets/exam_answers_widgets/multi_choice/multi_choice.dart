@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:icon_broken/icon_broken.dart';
 
-import '../../../models/exam_report_model/exam_report_model.dart';
+import '../../../../../models/exam_report_model/exam_report_model.dart';
 
 class MultiChoice extends StatelessWidget {
   final Questions ? model ;

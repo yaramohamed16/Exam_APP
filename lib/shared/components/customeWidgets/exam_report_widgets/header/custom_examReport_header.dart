@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../../colors/constants.dart';
 
 class ReportHeader extends StatelessWidget {
   final int score;

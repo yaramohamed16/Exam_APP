@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 
-import '../../cubit/exam_report_cubit/cubit.dart';
-import 'question_card.dart';
+import '../../../../cubit/exam_report_cubit/cubit.dart';
+import '../answers_card/question_card.dart';
 
 class QuestionList extends StatelessWidget {
   const QuestionList({super.key});

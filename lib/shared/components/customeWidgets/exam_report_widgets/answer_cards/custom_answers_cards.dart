@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../cubit/exam_report_cubit/cubit.dart';
-import '../constants.dart';
+import '../../../../cubit/exam_report_cubit/cubit.dart';
+import '../../../colors/constants.dart';
 
 class AnswersCards extends StatelessWidget {
   final int question_numbers;
