@@ -26,7 +26,8 @@ class CustomBottomButton extends StatelessWidget {
               padding: const EdgeInsetsDirectional.only(top: 20, bottom: 20),
               child: TextButton(
                   onPressed: () {
-                    Navigator.push(
+
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
