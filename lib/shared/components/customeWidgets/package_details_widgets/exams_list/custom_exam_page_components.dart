@@ -95,18 +95,11 @@ class ExamList extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(
-          height: 24,
-        ),
+        // const SizedBox(
+        //   height: 24,
+        // ),
       ],
     );
   }
 }
 
-// Widget greyLine() => Center(
-//       child: Container(
-//         height: 0.5,
-//         width: 370,
-//         color: Colors.grey.withOpacity(0.4),
-//       ),
-//     );

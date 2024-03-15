@@ -15,18 +15,18 @@ class ExamsCubit extends Cubit<ExamQuestionStats> {
 
   ExamQuestionModel? examquestionsData;
 
-  void getExamQuestions() {
+  void getExamQuestions({int? id}) {
     emit(ExamQuestionsLoading());
     DioHelper.getData(
         url: 'examQuestions',
         token: 'Bearer 14|fHJ371jakReEo5G8in6j4nFLFfTImCeDQ3Prqj6Z',
         query: {
-          'exam_id': '23',
+          'exam_id': id,
         }).then((value) {
       emit(ExamQuestionsSuccess());
       examquestionsData = ExamQuestionModel.fromJson(value.data);
       allExams = examquestionsData?.data ?? [];
-      print(examquestionsData?.data);
+      print("data:${examquestionsData?.data?[0].type}");
     }).catchError((error) {
       emit(ExamQuestionsError());
       print(error);
@@ -139,7 +139,6 @@ class ExamsCubit extends Cubit<ExamQuestionStats> {
     });
   }
 
-
   List<DataQuestions>? allExams = [];
 
   void filterExamPackages(String query) {
@@ -150,13 +149,11 @@ class ExamsCubit extends Cubit<ExamQuestionStats> {
       return;
     } else {
       List<DataQuestions> filteredExams = allExams!
-          .where((exam) =>
-          exam.title!.toLowerCase().contains(query.toLowerCase()))
+          .where(
+              (exam) => exam.title!.toLowerCase().contains(query.toLowerCase()))
           .toList();
       examquestionsData = ExamQuestionModel(data: filteredExams);
       emit(ExamQuestionsSuccess());
     }
   }
-
-
 }

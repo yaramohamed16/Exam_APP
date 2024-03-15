@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../models/exam_overview_model/examOverViewModel.dart';
 import '../../../../../models/exam_questions_model/exam_questions_model.dart';
 
 import '../../../../cubit/exam_questions_cubit/cubit.dart';
 import '../../../../cubit/exam_questions_cubit/states.dart';
 
 class CustomBottomSheet extends StatelessWidget {
-  CustomBottomSheet({
-    Key? key,
-    required this.data,
-    required this.updatePageViewController, // Callback function added
-  }) : super(key: key);
-
+  CustomBottomSheet(
+      {Key? key,
+      required this.data,
+      required this.updatePageViewController,
+      required this.exams})
+      : super(key: key);
+  ExamsOverview? exams;
   final List<DataQuestions>? data;
   final Function(int) updatePageViewController; // Callback function
 
@@ -20,11 +22,12 @@ class CustomBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => ExamsCubit()..getExamQuestions(),
+      create: (BuildContext context) =>
+          ExamsCubit()..getExamQuestions(id: exams?.id),
       child: BlocConsumer<ExamsCubit, ExamQuestionStats>(
         listener: (context, state) {},
         builder: (context, state) {
-          var cubut=ExamsCubit.get(context);
+          var cubit = ExamsCubit.get(context);
           return Container(
             padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
             decoration: const BoxDecoration(
@@ -83,13 +86,13 @@ class CustomBottomSheet extends StatelessWidget {
                 ),
                 Expanded(
                   child: ListView.separated(
-                    itemCount: cubut.examquestionsData?.data?.length??0,
+                    itemCount: cubit.examquestionsData?.data?.length ?? 0,
                     padding: const EdgeInsets.only(bottom: 16),
                     separatorBuilder: (BuildContext context, int index) =>
                         const Divider(),
                     itemBuilder: (BuildContext context, int index) {
                       return ReviewQuestions(
-                        list: cubut.examquestionsData?.data,
+                        list: cubit.examquestionsData?.data,
                         index: index,
                         updatePageViewController:
                             updatePageViewController, // Pass callback function

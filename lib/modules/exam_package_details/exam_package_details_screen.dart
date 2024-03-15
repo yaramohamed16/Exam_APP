@@ -256,6 +256,10 @@ class ExamPackageDetailsScreen extends StatelessWidget {
                                 child: const ExamListView(),
                               ),
                             ),
+                          if (cubit.isShown)
+                            const SizedBox(
+                              height: 10,
+                            ),
                           const CustomLine(),
                           const SizedBox(
                             height: 24,

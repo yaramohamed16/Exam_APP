@@ -10,6 +10,7 @@ class ExamsCubit extends Cubit<ExamsStats> {
   static ExamsCubit get(context) => BlocProvider.of(context);
 
   ExamPackagesModel? examPackagesData;
+
   void getExamPackages() {
     emit(ExamPackagesLoading());
     DioHelper.getData(
@@ -24,16 +25,4 @@ class ExamsCubit extends Cubit<ExamsStats> {
       // print(error);
     });
   }
-
-  // void searchExamPackages(String query) {
-  //   if (query.isEmpty) {
-  //     emit(ExamPackagesSuccess()
-  //     );
-  //   } else {
-  //     final results = examPackagesData?.data?.where((exam) =>
-  //         exam.title?.toLowerCase().contains(query.toLowerCase())).toList();
-  //     emit(ExamPackagesSuccess());
-  //     return results;
-  //   }
-  // }
 }

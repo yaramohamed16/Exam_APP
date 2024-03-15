@@ -15,20 +15,19 @@ import '../../shared/cubit/exam_overview_cubit/states.dart';
 class ExamOverviewPage extends StatelessWidget {
   ExamsOverview? exams;
 
-   ExamOverviewPage({super.key, required this.exams});
+  ExamOverviewPage({super.key, required this.exams});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ExamsCubit()..getExamOverview(),
+      create: (context) => ExamsCubit()..getExamOverview(id: exams?.id),
       child: BlocConsumer<ExamsCubit, ExamsOverviewStats>(
         listener: (context, state) {},
         builder: (context, state) {
           // var cubit = ExamsCubit.get(context).examOverviewData;
           return Scaffold(
             appBar: exams?.title != null
-                ? appBarCustom(
-                    pageName: "${exams?.title}", context: context)
+                ? appBarCustom(pageName: "${exams?.title}", context: context)
                 : appBarCustom(pageName: "", context: context),
             body: exams != null
                 ? Padding(
@@ -73,11 +72,10 @@ class ExamOverviewPage extends StatelessWidget {
                                 iconName: Icons.description_outlined),
                             const SizedBox(width: 16),
                             CustomDetailsCard(
-                                title: "Min score",
-                                iconName: Icons.gpp_good_outlined,
-                            minScore: exams?.minScore,
+                              title: "Min score",
+                              iconName: Icons.gpp_good_outlined,
+                              minScore: exams?.minScore,
                             ),
-
                           ],
                         ),
                         const Spacer(flex: 1),
@@ -95,7 +93,7 @@ class ExamOverviewPage extends StatelessWidget {
                           Text("---")
                         ]),
                         CustomBottomButton(
-                            exams:exams, bottomTitle: "Start Exam")
+                            exams: exams, bottomTitle: "Start Exam")
                       ],
                     ),
                   )

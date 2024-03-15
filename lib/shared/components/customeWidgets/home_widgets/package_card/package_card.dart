@@ -20,7 +20,6 @@ class PackageCard extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           // print(model?.id);
-
           Navigator.push(
               context,
               MaterialPageRoute(

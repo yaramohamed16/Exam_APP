@@ -26,14 +26,20 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Image.asset(
-          "assets/images/Splash Screen.png",
-          fit: BoxFit.cover,
-        ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            "assets/images/Splash Screen.png",
+            fit: BoxFit.cover,
+          ),
+          Positioned.fill(
+            child: Container(
+              color: Colors.transparent, // Ensure transparency for buttons on screen
+            ),
+          ),
+        ],
       ),
-    ));
+    );
   }
 }

@@ -104,7 +104,13 @@ class Home extends StatelessWidget {
                               ),
                               const Spacer(),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                          const PackageScreen()));
+                                },
                                 child: Text(
                                   'View all',
                                   style: TextStyle(

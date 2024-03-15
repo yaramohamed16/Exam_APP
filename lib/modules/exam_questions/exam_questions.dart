@@ -35,7 +35,7 @@ class ExamQuestionsPage extends StatelessWidget {
 
     return BlocProvider(
       create: (BuildContext context) => ExamsCubit()
-        ..getExamQuestions()
+        ..getExamQuestions(id: exams?.id)
         ..getExamOverview(),
       child: BlocConsumer<ExamsCubit, ExamQuestionStats>(
         listener: (BuildContext context, Object? state) {},
@@ -43,7 +43,7 @@ class ExamQuestionsPage extends StatelessWidget {
           final cubit = ExamsCubit.get(context);
           final examquestionsData = cubit.examquestionsData;
           secondsRemaining = exams?.examTime;
-          print(cubit.examOverviewData?.data?.exams);
+          // print(cubit.examOverviewData?.data?.exams);
           final idString =
               exams?.id.toString(); // Track the number of answered questions
           return Scaffold(
@@ -173,6 +173,7 @@ class ExamQuestionsPage extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) => CustomBottomSheet(
                               data: examquestionsData?.data,
+                              exams: exams,
                               updatePageViewController: (value) {
                                 questionsController.animateToPage(
                                   value,
@@ -346,13 +347,30 @@ class ExamQuestionsPage extends StatelessWidget {
                                               ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(12),
-                                                child: const Image(
-                                                  image: NetworkImage(
-                                                      "https://s3-alpha-sig.figma.com/img/5bfb/8dde/08100b2cd65af4064f8a80863926b854?Expires=1711324800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BHnzZWoYfAbO16GZPXsMGmxTe~o756Uix7U6ii6FxRl0GYrdyPq3OThNerXmf7aaIszaDdwAqet36yrVk1TrGJpCY4X~u3tpfgBvVLWL-VnOHkwTSRjiviYKmEl8n8~5Iv83tAtwV5eLrSfrRcOaTs4v2rPhKCibO4z8v5pFvv53zaxPxsMfquof425OgV3CH2p2w496NztFOEeZExPAExGl8~uJs~qr82sjUc~2iG1bHpBG4qD56bBiaAZ8fJ6T22m5NCVSvF8FGBLPLDKcWr9deJvSosHV~DRMKxjpTmiMSJrUuNNNyGKWBWH7enw~fYmF7KRqQAGyaQSyKkhBxw__"),
-                                                  fit: BoxFit.cover,
-                                                  width: 327,
-                                                  height: 146,
-                                                ),
+                                                child: (examquestionsData
+                                                            ?.data?[index]
+                                                            .attachment
+                                                            ?.url !=
+                                                        "https://zakreators.com/admin_panel/img/uploads/image")
+                                                    ? Image(
+                                                        image: NetworkImage(
+                                                            examquestionsData
+                                                                    ?.data?[
+                                                                        index]
+                                                                    .attachment
+                                                                    ?.url ??
+                                                                ''),
+                                                        fit: BoxFit.cover,
+                                                        width: 327,
+                                                        height: 146,
+                                                      )
+                                                    : Image(
+                                                        image: NetworkImage(
+                                                            "https://s3-alpha-sig.figma.com/img/5bfb/8dde/08100b2cd65af4064f8a80863926b854?Expires=1711324800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BHnzZWoYfAbO16GZPXsMGmxTe~o756Uix7U6ii6FxRl0GYrdyPq3OThNerXmf7aaIszaDdwAqet36yrVk1TrGJpCY4X~u3tpfgBvVLWL-VnOHkwTSRjiviYKmEl8n8~5Iv83tAtwV5eLrSfrRcOaTs4v2rPhKCibO4z8v5pFvv53zaxPxsMfquof425OgV3CH2p2w496NztFOEeZExPAExGl8~uJs~qr82sjUc~2iG1bHpBG4qD56bBiaAZ8fJ6T22m5NCVSvF8FGBLPLDKcWr9deJvSosHV~DRMKxjpTmiMSJrUuNNNyGKWBWH7enw~fYmF7KRqQAGyaQSyKkhBxw__"),
+                                                        fit: BoxFit.cover,
+                                                        width: 327,
+                                                        height: 146,
+                                                      ),
                                               ),
                                               Padding(
                                                 padding: const EdgeInsets.only(
