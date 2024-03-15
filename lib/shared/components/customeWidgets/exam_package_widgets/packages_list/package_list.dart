@@ -27,10 +27,12 @@ class PakageList extends StatelessWidget {
               ),
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
-              itemCount: examPackagesData.data?.length ?? 0,
+              // itemCount: examPackagesData.data?.length ?? 0,
+              itemCount:1,
               itemBuilder: (context, index) {
                 return ExamCard(
-                  model: examPackagesData.data![index],
+                  // model: examPackagesData.data![index],
+                  model: examPackagesData.data![1],
                   index: index,
                 );
               },

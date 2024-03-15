@@ -11,7 +11,9 @@ class PackageYouLike extends StatelessWidget {
   Data? data;
 
   PackageYouLike({super.key, this.data, required this.index});
+
   final int index;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -172,15 +174,17 @@ class PackageLikeList extends StatelessWidget {
     return ListView.separated(
       itemBuilder: (context, index) {
         return PackageYouLike(
-          data: PackageDetailsCubit.get(context).examPackagesData?.data?[index],
+          // data: PackageDetailsCubit.get(context).examPackagesData?.data?[index],
+          data: PackageDetailsCubit.get(context).examPackagesData?.data?[1],
           index: index,
         );
       },
       separatorBuilder: (context, index) => const SizedBox(
         width: 16,
       ),
-      itemCount:
-          PackageDetailsCubit.get(context).examPackagesData!.data!.length,
+      // itemCount:
+      //     PackageDetailsCubit.get(context).examPackagesData!.data!.length,
+      itemCount:1,
       scrollDirection: Axis.horizontal,
       // shrinkWrap: true,
     );
