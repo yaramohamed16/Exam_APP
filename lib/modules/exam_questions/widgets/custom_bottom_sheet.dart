@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../models/exam_overview_model/examOverViewModel.dart';
 import '../../../../models/exam_questions_model/exam_questions_model.dart';
 
-
 class CustomBottomSheet extends StatelessWidget {
   CustomBottomSheet(
       {Key? key,
@@ -25,14 +24,10 @@ class CustomBottomSheet extends StatelessWidget {
       create: (BuildContext context) =>
           ExamsCubit()..getExamQuestions(id: exams?.id),
       child: BlocConsumer<ExamsCubit, ExamQuestionStats>(
-        listener: (context, state) {
-          // if(state is ExamQuestionsLoading){
-          //   Center(child: CircularProgressIndicator());
-          // }
-        },
+        listener: (context, state) {},
         builder: (context, state) {
-          if(state is ExamQuestionsLoading){
-            Center(child: CircularProgressIndicator());
+          if (state is ExamQuestionsLoading) {
+            return Center(child: CircularProgressIndicator());
           }
           var cubit = ExamsCubit.get(context);
           return Container(
