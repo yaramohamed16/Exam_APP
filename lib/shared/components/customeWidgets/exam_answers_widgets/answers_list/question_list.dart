@@ -1,8 +1,8 @@
 
+import 'package:exams_app/shared/cubit/exam_report_cubit/cubit.dart';
 import 'package:flutter/material.dart';
 
 
-import '../../../../cubit/exam_report_cubit/cubit.dart';
 import '../answers_card/question_card.dart';
 
 class QuestionList extends StatelessWidget {

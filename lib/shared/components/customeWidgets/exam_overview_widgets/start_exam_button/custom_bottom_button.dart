@@ -1,5 +1,5 @@
 import 'package:exams_app/models/exam_overview_model/examOverViewModel.dart';
-import 'package:exams_app/modules/exam_questions/exam_questions.dart';
+import 'package:exams_app/modules/exam_questions/view/exam_questions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,8 +1,8 @@
 //question progress
+import 'package:exams_app/shared/components/colors/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import '../../../colors/constants.dart';
 
 class QuestionProgress extends StatelessWidget {
   final int index;

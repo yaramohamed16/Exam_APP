@@ -15,7 +15,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
       if (GetIt.instance.get<AppStorage>().getToken() != null) {
-        Navigator.pushNamed(context, '/home_screen');
+        Navigator.pushNamed(context, '/login');
       } else {
         Navigator.pushNamed(context, '/login');
       }

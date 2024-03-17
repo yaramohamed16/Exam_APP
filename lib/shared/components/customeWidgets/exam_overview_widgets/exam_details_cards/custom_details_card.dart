@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../cubit/exam_overview_cubit/cubit.dart';
 import '../../../colors/constants.dart';
 
 // ignore: must_be_immutable
