@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../shared/storage/app_storage.dart';
+import '../widgets/sign_in.dart';
 import '../widgets/text_form_field.dart';
 
 class LoginPage extends StatefulWidget {
@@ -192,41 +193,27 @@ class _LoginPageState extends State<LoginPage> {
                             const SizedBox(height: 16),
                             SizedBox(
                               height: 56,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  String email = emailController.text.trim();
-                                  String password =
-                                      passwordController.text.trim();
-                                  if (email.isNotEmpty && password.isNotEmpty) {
-                                    context
-                                        .read<LoginCubit>()
-                                        .login(email, password);
-                                  } else {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                        content: Text(
-                                            'Please enter both email and password.'),
-                                      ),
-                                    );
-                                  }
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 16),
-                                  backgroundColor: const Color(0xFF0225FF),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                ), // Call signIn function on button press
-                                child: const Text(
-                                  'Sign In',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: 'Roboto'),
-                                ),
-                              ),
+                              child: SignInButton(
+                                  onPress: () {
+                                    String email = emailController.text.trim();
+                                    String password =
+                                        passwordController.text.trim();
+                                    if (email.isNotEmpty &&
+                                        password.isNotEmpty) {
+                                      context
+                                          .read<LoginCubit>()
+                                          .login(email, password);
+                                    } else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                          content: Text(
+                                              'Please enter both email and password.'),
+                                        ),
+                                      );
+                                    }
+                                  },
+                                  text: "Sign In"),
                             ),
                             const SizedBox(height: 24),
                             Row(
