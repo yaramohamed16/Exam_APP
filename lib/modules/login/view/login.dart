@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../shared/storage/app_storage.dart';
+import '../widgets/text_form_field.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -30,11 +31,10 @@ class _LoginPageState extends State<LoginPage> {
         create: (context) => LoginCubit(), // Provide LoginCubit here
         child: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {
-            if(state is LoginLoading){
+            if (state is LoginLoading) {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
-                  content:
-                  Text('Loading....'),
+                  content: Text('Loading....'),
                 ),
               );
             }
@@ -122,27 +122,10 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            TextField(
-                              controller: emailController,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: const BorderSide(
-                                    color: Color(0xffD1D5DB),
-                                  ),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: const BorderSide(
-                                    color: Color(0xffD1D5DB),
-                                  ),
-                                ),
-                                hintText: 'Enter Email Address',
-                                hintStyle: const TextStyle(
-                                    fontSize: 14, color: Color(0xffD1D5DB)),
-                                fillColor: Colors.white,
-                                filled: true,
-                              ),
+                            defaultTextFormField(
+                              control: emailController,
+                              text: 'Email',
+                              type: TextInputType.emailAddress,
                             ),
                             const SizedBox(height: 16),
                             const Text(
@@ -155,43 +138,19 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            TextField(
-                              controller: passwordController,
-                              obscureText: showPassword,
-                              decoration: InputDecoration(
-                                suffixIcon: IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        showPassword = !showPassword;
-                                      });
-                                    },
-                                    icon: showPassword
-                                        ? const Icon(
-                                            Icons.visibility_off_outlined,
-                                            color: Color(0xff9CA3AF),
-                                          )
-                                        : const Icon(
-                                            Icons.visibility_outlined,
-                                            color: Color(0xff9CA3AF),
-                                          )),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: const BorderSide(
-                                    color: Color(0xffD1D5DB),
-                                  ),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: const BorderSide(
-                                    color: Color(0xffD1D5DB),
-                                  ),
-                                ),
-                                hintText: 'Enter Password',
-                                hintStyle: const TextStyle(
-                                    fontSize: 14, color: Color(0xffD1D5DB)),
-                                fillColor: Colors.white,
-                                filled: true,
-                              ),
+                            defaultTextFormField(
+                              control: passwordController,
+                              isPassword: showPassword,
+                              text: "Password",
+                              type: TextInputType.visiblePassword,
+                              suffix: showPassword
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              suffixPressed: () {
+                                setState(() {
+                                  showPassword = !showPassword;
+                                });
+                              },
                             ),
                             const SizedBox(height: 16),
                             Row(
@@ -284,8 +243,9 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    print( GetIt.instance
-                                        .get<AppStorage>().getToken());
+                                    print(GetIt.instance
+                                        .get<AppStorage>()
+                                        .getToken());
                                   },
                                   child: const Text(
                                     'Create an account',
