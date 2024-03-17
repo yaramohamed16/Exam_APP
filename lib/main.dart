@@ -1,9 +1,9 @@
+import 'package:exams_app/modules/login/view/login.dart';
 import 'package:exams_app/shared/storage/app_storage.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'modules/auth/login.dart';
-import 'modules/home/home.dart';
+import 'modules/home/view/home.dart';
 import 'modules/splash/splash_page.dart';
 import 'shared/bloc_observer/bloc_observer.dart';
 import 'shared/components/colors/constants.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        //'/AppInitializer' : (context)=> AppInitializer(),
+        // '/AppInitializer' : (context)=> AppInitializer(),
         '/': (context) => const SplashPage(),
         '/login': (context) => LoginPage(),
         '/home_screen': (context) => const Home(),
