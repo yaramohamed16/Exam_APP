@@ -43,7 +43,6 @@ class ExamList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -100,65 +99,6 @@ class ExamList extends StatelessWidget {
           // ),
         ],
       ),
-=======
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsetsDirectional.only(start: 10, top: 10),
-          child: Row(
-            children: [
-              CircleAvatar(
-                backgroundColor: iconBackgroundColor,
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                ExamOverviewPage(exams:exams)));
-                  },
-                  icon: const Icon(
-                    Icons.message_outlined,
-                    size: 18,
-                  ),
-                  color: mainColor,
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '${exams?.title}',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "${exams?.questionsCount} Questions",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: smallDescriptionText),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
-        // const SizedBox(
-        //   height: 24,
-        // ),
-      ],
->>>>>>> e71ff4b00835062775c4e235dd29b7b80478289d
     );
   }
 }

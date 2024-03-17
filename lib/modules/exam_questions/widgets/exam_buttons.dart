@@ -63,7 +63,6 @@ class ExamButtons extends StatelessWidget {
         const Spacer(flex: 1),
         InkWell(
           onTap: () {
-<<<<<<< HEAD
             if (examquestionsData?.data?.length != null &&
                 cubit.currentIndex != (examquestionsData?.data?.length ?? 0) - 1) {
               // Navigate to the next page
@@ -93,12 +92,6 @@ class ExamButtons extends StatelessWidget {
                 },
               );
             }
-=======
-            questionsController.nextPage(
-              duration: const Duration(milliseconds: 750),
-              curve: Curves.fastOutSlowIn,
-            );
->>>>>>> e71ff4b00835062775c4e235dd29b7b80478289d
           },
           child: Container(
             height: 44,
@@ -109,7 +102,6 @@ class ExamButtons extends StatelessWidget {
             ),
             child: Row(
               children: [
-<<<<<<< HEAD
                 Padding(
                   padding: const EdgeInsets.only(left: 20.0),
                   child: Text(
@@ -127,48 +119,6 @@ class ExamButtons extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 10.0),
                   child: Icon(Icons.arrow_forward, color: Colors.white, size: 24),
-=======
-                examquestionsData?.data?.length != null &&
-                        cubit.currentIndex !=
-                            (examquestionsData?.data?.length ?? 0) - 1
-                    ? Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
-                        child: Text(
-                          'Next',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      )
-                    : TextButton(
-                        onPressed: () {
-                          cubit.submitStudentAnswers(
-                              idString!, cubit.selectedOptions, (responseData) {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ExamReportScreen(
-                                    responseData: responseData),
-                              ),
-                            );
-                          });
-                        },
-                        child: Text(
-                          'Submit',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10.0),
-                  child:
-                      Icon(Icons.arrow_forward, color: Colors.white, size: 24),
->>>>>>> e71ff4b00835062775c4e235dd29b7b80478289d
                 ),
               ],
             ),

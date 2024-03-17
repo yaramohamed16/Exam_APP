@@ -1,9 +1,5 @@
 //exam questions
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e71ff4b00835062775c4e235dd29b7b80478289d
 import 'package:exams_app/modules/exam_questions/bloc/cubit.dart';
 import 'package:exams_app/modules/exam_questions/bloc/states.dart';
 import 'package:exams_app/modules/exam_questions/widgets/actions_of_exam.dart';
@@ -39,26 +35,18 @@ class ExamQuestionsPage extends StatelessWidget {
         ..getExamQuestions(id: exams?.id)
         ..getExamOverview(),
       child: BlocConsumer<ExamsCubit, ExamQuestionStats>(
-<<<<<<< HEAD
         listener: (BuildContext context, Object? state) {
           if (state is ExamQuestionsLoading) {
             Center(child: CircularProgressIndicator());
           }
         },
-=======
-        listener: (BuildContext context, Object? state) {},
->>>>>>> e71ff4b00835062775c4e235dd29b7b80478289d
         builder: (BuildContext context, state) {
           final cubit = ExamsCubit.get(context);
           final examquestionsData = cubit.examquestionsData;
           secondsRemaining = exams?.examTime;
           // print(cubit.examOverviewData?.data?.exams);
-<<<<<<< HEAD
           final idString =
               exams?.id.toString(); // Track the number of answered questions
-=======
-          final idString = exams?.id.toString(); // Track the number of answered questions
->>>>>>> e71ff4b00835062775c4e235dd29b7b80478289d
           return Scaffold(
             appBar: AppBar(
               leading: Padding(

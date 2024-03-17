@@ -25,7 +25,6 @@ class CustomBottomSheet extends StatelessWidget {
       create: (BuildContext context) =>
           ExamsCubit()..getExamQuestions(id: exams?.id),
       child: BlocConsumer<ExamsCubit, ExamQuestionStats>(
-<<<<<<< HEAD
         listener: (context, state) {
           // if(state is ExamQuestionsLoading){
           //   Center(child: CircularProgressIndicator());
@@ -35,10 +34,6 @@ class CustomBottomSheet extends StatelessWidget {
           if(state is ExamQuestionsLoading){
             Center(child: CircularProgressIndicator());
           }
-=======
-        listener: (context, state) {},
-        builder: (context, state) {
->>>>>>> e71ff4b00835062775c4e235dd29b7b80478289d
           var cubit = ExamsCubit.get(context);
           return Container(
             padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
