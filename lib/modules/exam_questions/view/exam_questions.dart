@@ -14,7 +14,7 @@ import 'package:timer_count_down/timer_controller.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 
 import '../../../models/exam_overview_model/examOverViewModel.dart';
-import '../../exam_report/exam_report_screen.dart';
+import '../../exam_report/view/exam_report_screen.dart';
 
 class ExamQuestionsPage extends StatelessWidget {
   ExamQuestionsPage(

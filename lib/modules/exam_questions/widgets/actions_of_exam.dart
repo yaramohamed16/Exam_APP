@@ -1,7 +1,7 @@
 import 'package:exams_app/modules/exam_questions/core/exam_questions_core.dart';
 import 'package:exams_app/modules/exam_questions/widgets/dialog_custom.dart';
 import 'package:exams_app/modules/exam_questions/widgets/custom_bottom_sheet.dart';
-import 'package:exams_app/modules/exam_report/exam_report_screen.dart';
+import 'package:exams_app/modules/exam_report/view/exam_report_screen.dart';
 import 'package:flutter/material.dart';
 
 List<Widget> actionsOfExam(context ,controller , cubit , idString , exams ,examquestionsData ,questionsController){

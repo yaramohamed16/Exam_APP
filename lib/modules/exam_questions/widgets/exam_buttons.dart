@@ -1,4 +1,4 @@
-import 'package:exams_app/modules/exam_report/exam_report_screen.dart';
+import 'package:exams_app/modules/exam_report/view/exam_report_screen.dart';
 import 'package:flutter/material.dart';
 
 class ExamButtons extends StatelessWidget {

@@ -1,5 +1,6 @@
 import 'package:exams_app/modules/login/bloc/auth_cubit.dart';
 import 'package:exams_app/modules/login/bloc/auth_state.dart';
+import 'package:exams_app/shared/components/colors/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
