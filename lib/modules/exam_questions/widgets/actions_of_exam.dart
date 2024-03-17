@@ -55,6 +55,10 @@ List<Widget> actionsOfExam(context ,controller , cubit , idString , exams ,examq
             onConfirm: () {
               controller.pause();
 
+<<<<<<< HEAD
+=======
+              // print("id: ${exams?.id}");
+>>>>>>> e71ff4b00835062775c4e235dd29b7b80478289d
               cubit.submitStudentAnswers(
                   idString!, cubit.selectedOptions, (responseData) {
                 Navigator.pop(context);
@@ -67,11 +71,14 @@ List<Widget> actionsOfExam(context ,controller , cubit , idString , exams ,examq
                 );
               });
               print(cubit.selectedOptions);
+<<<<<<< HEAD
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text('Exam End'),
                 ),
               );
+=======
+>>>>>>> e71ff4b00835062775c4e235dd29b7b80478289d
             },
             onCancel: () {
               Navigator.pop(context);
