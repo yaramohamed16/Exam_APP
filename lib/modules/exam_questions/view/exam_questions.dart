@@ -35,12 +35,11 @@ class ExamQuestionsPage extends StatelessWidget {
         ..getExamQuestions(id: exams?.id)
         ..getExamOverview(),
       child: BlocConsumer<ExamsCubit, ExamQuestionStats>(
-        listener: (BuildContext context, Object? state) {
-          if (state is ExamQuestionsLoading) {
-            Center(child: CircularProgressIndicator());
-          }
-        },
+        listener: (BuildContext context, Object? state) {},
         builder: (BuildContext context, state) {
+          if (state is ExamQuestionsLoading) {
+            return Center(child: CircularProgressIndicator());
+          }
           final cubit = ExamsCubit.get(context);
           final examquestionsData = cubit.examquestionsData;
           secondsRemaining = exams?.examTime;
