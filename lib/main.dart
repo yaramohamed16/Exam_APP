@@ -9,30 +9,26 @@ import 'shared/bloc_observer/bloc_observer.dart';
 import 'shared/components/colors/constants.dart';
 import 'shared/network/remote/dio_helper.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() {
   GetIt.instance.registerLazySingleton(() => AppStorage());
-  await AppStorage.init();
+  AppStorage.init();
   DioHelper.init();
   Bloc.observer = MyBlocObserver();
-
-  String? token = GetIt.instance.get<AppStorage>().getToken();
-  String initialRoute = token != null ? '/home_screen' : '/login';
-
-  runApp(MyApp(initialRoute: initialRoute));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final String initialRoute;
-
-  const MyApp({required this.initialRoute, Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: initialRoute,
+
+      initialRoute: '/',
       routes: {
+        //'/AppInitializer' : (context)=> AppInitializer(),
+        '/': (context) => const SplashPage(),
         '/login': (context) => LoginPage(),
         '/home_screen': (context) => const Home(),
       },
@@ -42,6 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: scaffoldBackgroundColor,
       ),
+      // home: Home(),
     );
   }
 }

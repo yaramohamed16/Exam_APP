@@ -14,11 +14,10 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      if (GetIt.instance.get<AppStorage>().getToken() != null) {
-        Navigator.pushNamed(context, '/login');
-      } else {
-        Navigator.pushNamed(context, '/login');
-      }
+      if(GetIt.instance.get<AppStorage>().getToken()!=null){
+        Navigator.pushNamed(context, '/home_screen');
+      }else{
+        Navigator.pushNamed(context, '/login');}
     });
     super.initState();
   }
